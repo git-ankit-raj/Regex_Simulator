@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Regex Simulator</title>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="main-card">
+        <h1>Regex Simulator</h1>
+        <div class="card1 glow">
+            <label for="test_string">Test String:</label><br>
+            <textarea id="test" name="test" rows="4" cols="50"></textarea><br>
+            <label for="regex">Regular Expression:</label><br>
+            <input type="text" id="regex" name="regex"><br>
+            
+            <h2>Matches Found:</h2>
+            <ul id="matching_results"></ul>
+
+            <script>
+                document.getElementById("test").addEventListener("input", updateMatchingResults);
+                document.getElementById("regex").addEventListener("input", updateMatchingResults);
+
+                function updateMatchingResults() {
+                    var testString = document.getElementById("test").value;
+                    var regexPattern = document.getElementById("regex").value;
+
+                    var matchingResultsList = document.getElementById("matching_results");
+                    matchingResultsList.innerHTML = ""; // Clear previous results
+
+                    if (testString && regexPattern) {
+                        var regex = new RegExp(regexPattern, "g");
+                        var matches = testString.match(regex);
+                        if (matches) {
+                            matches.forEach(function(match) {
+                                var listItem = document.createElement("li");
+                                listItem.textContent = match;
+                                matchingResultsList.appendChild(listItem);
+                            });
+                        } else {
+                            var listItem = document.createElement("li");
+                            listItem.textContent = "No matches found.";
+                            matchingResultsList.appendChild(listItem);
+                        }
+                    }
+                }
+            </script>
+        </div>
+        <a href="/validate-email"> 👉 Validate Your Email Now 👈</a>
+
+    </div>
+</body>
+</html>

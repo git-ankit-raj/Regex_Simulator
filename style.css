@@ -1,0 +1,165 @@
+body{
+    padding:0;
+    margin:0;
+    background-color: rgba(216, 108, 108, 0.964);
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    outline:none;
+    border: none;
+    overflow-y: auto;
+    overflow-x: none;
+    letter-spacing: 0.5px;
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+  }
+
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+.shape:first-child{
+    background: linear-gradient(
+        #30d10f,
+        #23a2f6
+    );
+    left: -10px;
+    top: -20px;
+}
+
+
+
+.shape:last-child{
+    background: linear-gradient(
+        to right,
+        #ff512f,
+        #f09819
+    );
+    right: -90px;
+    bottom: -80px;
+}
+
+.main-card{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    margin: 20px;
+    padding-top: 20px;
+    padding-left: 200px;
+    padding-right: 80px;
+    margin-top: 10px;
+}
+
+textarea, input {
+    border-radius: 5px; 
+    background-color: #f3c4c4; 
+    border: 1px solid #ccc; 
+    padding: 5px; 
+}
+
+
+
+.card1{
+    position:relative;
+    width: 70vh;
+    padding: 30px;
+    margin: 10px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(1, 0, 4, 0.6);
+    display: flex;
+    flex-direction: column;
+    text-align:center     ;
+    background: linear-gradient(0deg, rgb(246, 84, 84), rgb(111, 95, 221))
+}
+
+
+.card2{
+    position:relative;
+    width: 70vh;
+    padding: 40px;
+    margin: 10px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: linear-gradient(0deg, rgb(183, 162, 162), rgb(15, 239, 172))
+}
+
+
+@keyframes glow{
+
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-weight: bold; 
+    font-size: 70px;
+}
+
+
+
+#email{
+
+    width: 500px;
+    border-radius: 5px; 
+    background-color: #f5f5f5; 
+    border: 1px solid #ccc; 
+    padding: 5px; 
+    margin: 20px 0;
+}
+
+
+
+button {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      "Liberation Mono", "Courier New", monospace;
+    font-size: 15px;
+    padding: 0.8em 2em;
+    font-weight: 500;
+    background: #020f51;
+    color: white;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.6em;
+    cursor: pointer;
+  }
+  
+  .gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 0.6em;
+    margin-top: -0.25em;
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.3)
+    );
+  }
+  
+  .label {
+    position: relative;
+    top: -1px;
+  }
+  
+  
+  button:active {
+    transform: scale(0.97);
+  }
+  

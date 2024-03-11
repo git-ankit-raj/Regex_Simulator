@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Validate Email</title>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <div class="main-card"> 
+        <h1>Validate Email</h1>
+        <div class="card2 glow">
+            <form action="/validate-email" method="post">
+                <label for="email_input">Email Address:</label><br>
+                <input type="email_input" id="email_input" name="email_input" required><br>
+                <button type="submit">   <span class="transition"></span>
+                    <span class="gradient"></span>
+                    <span class="label">Validate</span></button>
+            </form>
+           
+
+            {% if email_input and valid is not none %}
+            <h3>Email Validation Result</h3>
+            <p>The email address <strong style = "{% if valid %}color: green;
+                                                  {% else %}color: red;
+                                                  {% endif %}">
+                {{ email_input }}</strong> 
+                is {% if valid %}valid{% else %}invalid{% endif %}.</p>
+            {% endif %}
+        </div>
+
+        <a href="/">🏡</a>
+
+    </div>
+
+</body>
+</html>
